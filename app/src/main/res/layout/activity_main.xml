@@ -8,69 +8,206 @@
     android:background="#F3F4F5"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:background="#FFFFFF"
-        android:paddingLeft="26dp"
-        android:paddingRight="26dp">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="5dp"
-            android:layout_height="5dp"
-            android:src="@drawable/icon"/>
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="이메일"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:layout_marginLeft="7dp"/>
-
-        //사이 벌려줄 때 아래 처럼 빈 텍스트뷰 하나 넣어줘서 가운데 벌려줌
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="사용 가능한 이메일입니다."
-            android:textSize="13sp"
-            android:textColor="#2767E3"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp">
 
-    /*
-        ㅁ FrameLayout: 두개 이상의 뷰를 겹쳐놓고 싶을 때 쓰는 레이아웃
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이메일"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="7dp"/>
+
+                //사이 벌려줄 때 아래 처럼 빈 텍스트뷰 하나 넣어줘서 가운데 벌려줌
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용 가능한 이메일입니다."
+                    android:textSize="13sp"
+                    android:textColor="#2767E3"/>
+            </LinearLayout>
+
+            /*
+            ㅁ FrameLayout: 두개 이상의 뷰를 겹쳐놓고 싶을 때 쓰는 레이아웃
             - 리니어아웃 만으로 겹침 표현할 수 없음
             - 이건 gravity가 아닌 layout_gravity로 써야 함
             - 먼저 작성된 뷰가 더 밑바닥에 깔리기 때문에 순서 고려하여 XML 작성
-    */
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="26dp"
-        android:paddingRight="26dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="41dp"
-        android:background="#FFFFFF">
+            */
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="41dp"
+                android:background="#FFFFFF">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="이메일"
-            android:inputType="textEmailAddress" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="이메일"
+                    android:inputType="textEmailAddress" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="중복확인" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="중복확인" />
+            </FrameLayout>
 
-    </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="47dp">
+
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/icon"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="비밀번호"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="특수문자를 포함한 8자리"
+                android:inputType="textPassword"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="47dp">
+
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/icon"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="비밀번호 확인"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="특수문자를 포함한 8자리"
+                android:inputType="textPassword"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="#FFFFFF" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="36dp">
+
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:src="@drawable/icon"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="근무 가능 시간" />
+                </LinearLayout>
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="27dp"
+                    >
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="풀타임"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="파트타임(재직중)"
+                        android:layout_marginLeft="47dp"/>
+                </RadioGroup>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="다음"
+                    android:textSize="20dp"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginBottom="31dp"
+                    android:background="#FFFFFF" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>
