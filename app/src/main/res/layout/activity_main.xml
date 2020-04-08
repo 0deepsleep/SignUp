@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F4F5"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:src="@drawable/icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:layout_marginLeft="7dp"/>
+
+        //사이 벌려줄 때 아래 처럼 빈 텍스트뷰 하나 넣어줘서 가운데 벌려줌
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용 가능한 이메일입니다."
+            android:textSize="13sp"
+            android:textColor="#2767E3"/>
+    </LinearLayout>
+
+    /*
+        ㅁ FrameLayout: 두개 이상의 뷰를 겹쳐놓고 싶을 때 쓰는 레이아웃
+            - 리니어아웃 만으로 겹침 표현할 수 없음
+            - 이건 gravity가 아닌 layout_gravity로 써야 함
+            - 먼저 작성된 뷰가 더 밑바닥에 깔리기 때문에 순서 고려하여 XML 작성
+    */
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="41dp"
+        android:background="#FFFFFF">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이메일"
+            android:inputType="textEmailAddress" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="중복확인" />
+
+    </FrameLayout>
+</LinearLayout>
